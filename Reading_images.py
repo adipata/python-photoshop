@@ -5,7 +5,7 @@ from matplotlib import pyplot
 
 import numpy as np
 
-image = image.imread('img.jpeg')
+image = image.imread('img_small.jpg')
 img = np.array(image)
 
 '''
@@ -23,8 +23,6 @@ pyplot.show()
 Exercise 2
 '''
 
-print(image[2665][3999])
-
 for y in range(0, image.shape[0] - 1):
     for x in range(0, image.shape[1] - 1):
         m = median(img[y][x])
@@ -33,4 +31,7 @@ for y in range(0, image.shape[0] - 1):
         img[y][x][2] = m
 
 pyplot.imshow(img)
+pyplot.savefig('img_bw.png')
 pyplot.show()
+
+
